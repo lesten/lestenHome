@@ -1,1 +1,78 @@
-Hello world!
+This is My first page.
+
+自己的mac 自带的 python版本是python 2.7.13 想安装一些东西 但是又不想直接装在系统自带的python环境里面
+这时候咋办呢？ 因为 如果 把系统的python 搞坏了 想重装相当的麻烦啊。
+然后就 遇到了  pyenv 这个玩意，嗯 还不错。
+
+'''
+其实  据说还有个玩意叫做 virtualenv。 
+是独立运行的一套 python_env. 
+安装：
+	pip install virtualenv
+创建虚拟环境：
+	virtualenv myenv
+	指定版本
+	virtualenv --python=/url/local/python2.7/bin/python py2.7
+	指定python 2.7的环境 
+进入虚拟环境：
+	source myenv/bin/activate
+	ok,进入了myenv的虚拟环境里了 
+退出虚拟环境：
+	deactivate
+	如果要删除虚拟环境直接 rm -rf myenv 就OK了
+'''
+
+摘自：
+http://seisman.info/python-pyenv.html
+
+1. 先在线安装 pyenv	
+$ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+顺利。其实 macos  直接用 brew install pyenv 也可以
+
+2.接着导出环境变量 到 ~/.bashrc
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"   # 这句可以不加
+
+3. pyenv install --list 
+show 可以安装到python 版本  选择自己想要的
+
+4. pyenv install 3.5.0 (python 版本号  自己指定)
+
+pyenv 安装原理：
+从官网下载对应的版本压缩包到/tmp/目录，然后在/tmp/目录 执行编译安装，安装到~/.pyenv/versions/下面
+pyenv 安装很慢的解决办法：
+可以先手动下载对应的版本压缩包，放到~/.pyenv/cache/下面，pyenv会校验md5值和完整性，确认无误的话就不会重新下载直接从这里安装
+顺利。
+
+初始是没有这个目录的,所以要手动创建
+mkdir ~/.pyenv/cache
+cp yourpath ~/.pyenv/cache
+然后 重新 pyenv install
+
+这时候出现了 zipimport.ZipImportError: can't decompress data; zlib not available
+这是 没有zlib库， 但是找了一圈,都说到 Fedora 或者 Ubuntu 的解决方案  但是没有macos 的。
+甚至有说 自己编译zlib 我还真make 了一个 然而还是没搞定 其中过程弯路不表
+最终找到  https://github.com/pyenv/pyenv/issues/454
+
+@nikolay I had the same issue, and was able to fix by updating command line tools on OSX. Just run xcode-select --install
+Once, that's finished, you should be able to install 3.5.0
+
+终于解决这个问题
+
+5. pyenv versions 显示系统安装的版本 用*号表明当前版本
+
+6. pyenv global 3.5.0  指定当前全局版本为 3.5.0
+
+输入 python 即可使用新版本的 python；
+系统自带的脚本会以 /usr/bin/python 的方式直接调用老版本的 python，因而不会对系统脚本产生影响；
+使用 pip 安装第三方模块时会自动按照到当前的python版本下，不会和系统模块发生冲突。
+使用 pip 安装模块后，可能需要执行 pyenv rehash 更新数据库；
+
+7. pyenv 其他功能
+pyenv uninstall 卸载某个版本
+pyenv update 更新 pyenv 及其插件
+
+
+
