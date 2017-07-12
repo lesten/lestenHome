@@ -19,59 +19,69 @@
     </section>
 
     <section class="main-content">
-      <h3>
-<a id="this-is-my-first-page-about-python-env" class="anchor" href="#this-is-my-first-page-about-python-env" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>This is My first page. About Python Env</h3>
+      <h1>
+<a id="this-is-my-first-page-about-python-env" class="anchor" href="#this-is-my-first-page-about-python-env" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>This is My first page. About Python Env</h1>
 <p>自己的mac 自带的 python版本是python 2.7.13 想安装一些东西 但是又不想直接装在系统自带的python环境里面
 这时候咋办呢？ 因为 如果 把系统的python 搞坏了 想重装相当的麻烦啊。
 然后就 遇到了  pyenv 这个玩意，嗯 还不错。</p>
-<p>'''
-其实  据说还有个玩意叫做 virtualenv。
+<p>其实  据说还有个玩意叫做 virtualenv。
 是独立运行的一套 python_env.</p>
-<h1>
-<a id="安装" class="anchor" href="#%E5%AE%89%E8%A3%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>安装：</h1>
+<h3>
+<a id="安装" class="anchor" href="#%E5%AE%89%E8%A3%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>安装：</h3>
 <pre><code>pip install virtualenv
 </code></pre>
-<h1>
-<a id="创建虚拟环境" class="anchor" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>创建虚拟环境：</h1>
+<h3>
+<a id="创建虚拟环境" class="anchor" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>创建虚拟环境：</h3>
 <pre><code>virtualenv myenv
 指定版本
 virtualenv --python=/url/local/python2.7/bin/python py2.7
 指定python 2.7的环境 
 </code></pre>
-<h1>
-<a id="进入虚拟环境" class="anchor" href="#%E8%BF%9B%E5%85%A5%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>进入虚拟环境：</h1>
+<h3>
+<a id="进入虚拟环境" class="anchor" href="#%E8%BF%9B%E5%85%A5%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>进入虚拟环境：</h3>
 <pre><code>source myenv/bin/activate
 ok,进入了myenv的虚拟环境里了 
 </code></pre>
-<h1>
-<a id="退出虚拟环境" class="anchor" href="#%E9%80%80%E5%87%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>退出虚拟环境：</h1>
+<h3>
+<a id="退出虚拟环境" class="anchor" href="#%E9%80%80%E5%87%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>退出虚拟环境：</h3>
 <pre><code>deactivate
 如果要删除虚拟环境直接 rm -rf myenv 就OK了
 </code></pre>
-<p>'''</p>
 <h2>
 <a id="摘自" class="anchor" href="#%E6%91%98%E8%87%AA" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>摘自：</h2>
 <p><a href="http://seisman.info/python-pyenv.html">http://seisman.info/python-pyenv.html</a></p>
-<h2>
-<a id="1-先在线安装-pyenv" class="anchor" href="#1-%E5%85%88%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85-pyenv" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. 先在线安装 pyenv</h2>
-<p>$ curl -L <a href="https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer">https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer</a> | bash
-顺利。其实 macos  直接用 brew install pyenv 也可以</p>
-<h2>
-<a id="2接着导出环境变量-到-bashrc" class="anchor" href="#2%E6%8E%A5%E7%9D%80%E5%AF%BC%E5%87%BA%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-%E5%88%B0-bashrc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.接着导出环境变量 到 ~/.bashrc</h2>
-<p>export PYENV_ROOT="$HOME/.pyenv"
+<ul>
+<li>
+<ol>
+<li>先在线安装 pyenv
+$ curl -L <a href="https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer">https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer</a> | bash
+顺利。其实 macos  直接用 brew install pyenv 也可以</li>
+</ol>
+</li>
+<li>
+<p>2.接着导出环境变量 到 ~/.bashrc
+export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"   # 这句可以不加</p>
-<h2>
-<a id="3-pyenv-install---list" class="anchor" href="#3-pyenv-install---list" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. pyenv install --list</h2>
-<p>show 可以安装到python 版本  选择自己想要的</p>
-<h2>
-<a id="4-pyenv-install-350-python-版本号--自己指定" class="anchor" href="#4-pyenv-install-350-python-%E7%89%88%E6%9C%AC%E5%8F%B7--%E8%87%AA%E5%B7%B1%E6%8C%87%E5%AE%9A" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. pyenv install 3.5.0 (python 版本号  自己指定)</h2>
-<p>pyenv 安装原理：
+</li>
+<li>
+<ol start="3">
+<li>pyenv install --list
+show 可以安装到python 版本  选择自己想要的</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>pyenv install 3.5.0 (python 版本号  自己指定)
+pyenv 安装原理：
 从官网下载对应的版本压缩包到/tmp/目录，然后在/tmp/目录 执行编译安装，安装到~/.pyenv/versions/下面
 pyenv 安装很慢的解决办法：
 可以先手动下载对应的版本压缩包，放到~/.pyenv/cache/下面，pyenv会校验md5值和完整性，确认无误的话就不会重新下载直接从这里安装
-顺利。</p>
+顺利。</li>
+</ol>
+</li>
+</ul>
 <p>初始是没有这个目录的,所以要手动创建
 mkdir ~/.pyenv/cache
 cp yourpath ~/.pyenv/cache
@@ -83,29 +93,40 @@ cp yourpath ~/.pyenv/cache
 <p><a href="https://github.com/nikolay" class="user-mention">@nikolay</a> I had the same issue, and was able to fix by updating command line tools on OSX. Just run xcode-select --install
 Once, that's finished, you should be able to install 3.5.0</p>
 <p>终于解决这个问题</p>
-<h2>
-<a id="5-pyenv-versions-显示系统安装的版本-用号表明当前版本" class="anchor" href="#5-pyenv-versions-%E6%98%BE%E7%A4%BA%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%9A%84%E7%89%88%E6%9C%AC-%E7%94%A8%E5%8F%B7%E8%A1%A8%E6%98%8E%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5. pyenv versions 显示系统安装的版本 用*号表明当前版本</h2>
-<p>system</p>
 <ul>
-<li>3.5.0 (set by /Users/lesten/.pyenv/version)
+<li>
+<ol start="5">
+<li>pyenv versions 显示系统安装的版本 用*号表明当前版本
+system
+*3.5.0 (set by /Users/lesten/.pyenv/version)
 但是进入 我自己的工程目录的时候
 输入 python versions 还是会换回 系统python 版本
 这时候就需要  pyenv 指定 本地版本</li>
+</ol>
+</li>
 </ul>
 <p>pyenv local 设置面向程序的本地版本，通过将版本号写入当前目录下的 .python-version 文件的方式。通过这种方式设置的 Python 版本优先级较 global 高。pyenv 会从当前目录开始向上逐级查找 .python-version 文件，直到根目录为止。若找不到，就用 global 版本。
 $ pyenv local 2.7.3
 pyenv shell
 设置面向 shell 的 Python 版本，通过设置当前 shell 的 PYENV_VERSION 环境变量的方式。这个版本的优先级比 local 和 global 都要高。--unset 参数可以用于取消当前 shell 设定的版本。</p>
-<h2>
-<a id="6-pyenv-global-350--指定当前全局版本为-350" class="anchor" href="#6-pyenv-global-350--%E6%8C%87%E5%AE%9A%E5%BD%93%E5%89%8D%E5%85%A8%E5%B1%80%E7%89%88%E6%9C%AC%E4%B8%BA-350" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6. pyenv global 3.5.0  指定当前全局版本为 3.5.0</h2>
-<p>输入 python 即可使用新版本的 python；
+<ul>
+<li>
+<ol start="6">
+<li>pyenv global 3.5.0  指定当前全局版本为 3.5.0
+输入 python 即可使用新版本的 python；
 系统自带的脚本会以 /usr/bin/python 的方式直接调用老版本的 python，因而不会对系统脚本产生影响；
 使用 pip 安装第三方模块时会自动按照到当前的python版本下，不会和系统模块发生冲突。
-使用 pip 安装模块后，可能需要执行 pyenv rehash 更新数据库；</p>
-<h2>
-<a id="7-pyenv-其他功能" class="anchor" href="#7-pyenv-%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. pyenv 其他功能</h2>
-<p>pyenv uninstall 卸载某个版本
-pyenv update 更新 pyenv 及其插件</p>
+使用 pip 安装模块后，可能需要执行 pyenv rehash 更新数据库；</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>pyenv 其他功能
+(1). pyenv uninstall 卸载某个版本
+(2). pyenv update 更新 pyenv 及其插件</li>
+</ol>
+</li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/lesten/lestenHome">Lestenhome</a> is maintained by <a href="https://github.com/lesten">lesten</a>.</span>
